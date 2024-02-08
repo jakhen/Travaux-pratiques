@@ -1,29 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activityQuiz">
+    tools:context=".activityQuiz"
+    >
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/mes_notes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:text="@string/mes_notes"
+        android:textColor="#0662AC"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="150dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listcontainer"
+        android:layout_below="@id/mes_notes"
+        >
+        <ListView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:text="Bienvenue sur ce Quiz"
-            android:textColor="#5A0C06" />
+            android:id="@+id/listview"
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="150dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/footer"
+        android:layout_below="@id/listcontainer"
+        android:background="#D0FEFF"
+        >
+        <EditText
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:ems="10"
+            android:hint="@string/element_list_ajout"
+            android:layout_centerInParent="true"
+            android:id="@+id/itemInput"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30sp"
+            android:layout_toRightOf="@+id/itemInput"
+            app:cardCornerRadius="10dp"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#01ABFF"
+                >
+
+            <ImageView
+            android:id="@+id/imageAdd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/add_item"
+
+            />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

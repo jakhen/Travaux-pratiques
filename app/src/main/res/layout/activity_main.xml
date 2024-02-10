@@ -22,6 +22,17 @@
             android:textColor="#0662AC"
             android:textSize="24sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:text="Nous sommes heureux de vous revoir"
+            android:textColor="#0662AC"
+            android:textSize="24sp"
+            android:visibility="invisible"
+            android:id="@+id/welcomeBackText"/>
+
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

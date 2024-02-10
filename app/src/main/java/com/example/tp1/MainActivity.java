@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     protected Button mBtn_Validate;
     protected boolean isBack=false;
+    protected TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtn_Validate = findViewById(R.id.Btn_Validate);
         //mBtn_Validate.setEnabled(false);
         mBtn_Validate.setOnClickListener(this);
+        textView = findViewById(R.id.welcomeBackText);
 
     }
     protected void onResume(){
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onPause() {
         super.onPause();
         isBack = true;
+        textView.setVisibility(View.VISIBLE);
     }
     Toast t;
 

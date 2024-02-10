@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(isBack){
             makeToast("Nous sommes heureux de vous revoir");
+            textView.setVisibility(View.VISIBLE);
             isBack = false;
         }
     }
     protected void onPause() {
         super.onPause();
         isBack = true;
-        textView.setVisibility(View.VISIBLE);
     }
     Toast t;
 
